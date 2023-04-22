@@ -47,7 +47,7 @@ namespace StudentsApi.Services
             }
         }
 
-        public async Task<IEnumerable<Student>> GetStudentsByName(string name)
+        public async Task<IEnumerable<Student>> GetStudentsByName(string? name)
         {
             IEnumerable<Student> students;
             if (!name.IsNullOrEmpty())
