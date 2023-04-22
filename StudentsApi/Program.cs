@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudentsApi.Context;
-
-
+using StudentsApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(options => {
 });
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IStudentService, StudentService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
